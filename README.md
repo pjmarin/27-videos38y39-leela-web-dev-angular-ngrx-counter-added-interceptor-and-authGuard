@@ -57,3 +57,5 @@ login$ = createEffect(() => {
       }), take(1) // Fix for logout, avoids to re-login again automatically when click logout button
     );
   });
+  
+  En el video original tambien se corrige agregando take(1), pero en lugar de hacerlo en el effect del login, lo hace en el archivo de interceptor
