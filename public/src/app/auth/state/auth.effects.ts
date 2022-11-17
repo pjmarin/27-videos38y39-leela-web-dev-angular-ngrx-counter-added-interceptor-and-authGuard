@@ -38,7 +38,7 @@ export class AuthEffects {
             return of(setErrorMessage({ message: errorMessage }));
           })
         );
-      }), take(1) // Fix for logout, avoids to re-login again automatically when click logout button
+      })  // , take(1) // Fix for logout, avoids to re-login again automatically when click logout button
     );
   });
 
