@@ -20,6 +20,7 @@ export class AuthTokenInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     return this.store.select(getToken).pipe(
+      take(1), // se ha quitado este operador del archivo auth.effects.ts y se ha agregado aqui
       exhaustMap((token) => {
         if (!token) {
           return next.handle(req);
